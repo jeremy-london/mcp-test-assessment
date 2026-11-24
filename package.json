@@ -1,0 +1,25 @@
+{
+  "name": "mcp-test-assessment",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Small MCP server with ten tools. Candidates build the automated test suite.",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "node --test \"test/**/*.test.js\"",
+    "check": "npm test && npm run e2e",
+    "ui": "node src/web.js",
+    "e2e": "playwright test",
+    "e2e:ui": "playwright test --ui",
+    "e2e:debug": "playwright test --debug"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.1"
+  }
+}

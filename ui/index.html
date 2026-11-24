@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI QA Leader Assessment</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <strong>AI QA Leader Assessment</strong>
+      <span class="muted">Local inspector · stdio server: <code>src/index.js</code></span>
+    </header>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <input id="filter" data-testid="tool-filter" type="search" placeholder="Filter tools" />
+        <ul id="tool-list" data-testid="tool-list"></ul>
+      </aside>
+
+      <main class="content">
+        <section class="card">
+          <h1 id="tool-name" data-testid="tool-name">Loading…</h1>
+          <p id="tool-description" data-testid="tool-description" class="muted"></p>
+          <details>
+            <summary>Input schema</summary>
+            <pre id="tool-schema" data-testid="tool-schema"></pre>
+          </details>
+        </section>
+
+        <section class="card">
+          <h2>Arguments</h2>
+          <div id="examples" data-testid="examples" class="chips"></div>
+          <label for="args">JSON arguments</label>
+          <textarea id="args" data-testid="args" rows="7" spellcheck="false">{}</textarea>
+          <p id="args-error" data-testid="args-error" class="error" hidden></p>
+          <div class="actions">
+            <button id="run" data-testid="run" type="button">Run tool</button>
+            <span id="status" data-testid="status" role="status"></span>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Request</h2>
+          <pre id="request" data-testid="request"></pre>
+          <h2>Response</h2>
+          <pre id="response" data-testid="response"></pre>
+        </section>
+
+        <section class="card">
+          <h2>History <button id="clear-history" data-testid="clear-history" type="button" class="link">Clear</button></h2>
+          <ol id="history" data-testid="history" class="history"></ol>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="/static/app.js"></script>
+  </body>
+</html>
